@@ -1,7 +1,7 @@
 # CI de Nível 01 - Pipeline manual,integrada ao Build do codigo e agendada
 
 # nome da pipeline
-name: "N2 - Execução Integrada - Versao 2"
+name: "N1- Execução Integrada - Trabalho CI"
 
 # gatilhos / triggers - regras de disparo
 # gatilho manual = workflow_dispatch
@@ -14,7 +14,7 @@ on:
     schedule:
     # cronograma de execucao
     # 1- minuto, 2- hora , 3- dia do mes, 4- mes, 5- dia da semana
-    - cron: '*/30 * * * *' # runs at 09:35, only on Saturday
+    - cron: '0 8 * * 4' # runs at 08:00, only on Thursday
 #tarefas dentro da pipeline = jobs
 
 jobs:
