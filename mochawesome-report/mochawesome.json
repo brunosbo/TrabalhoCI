@@ -1,0 +1,119 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-06-16T22:22:48.018Z",
+    "end": "2026-06-16T22:22:48.022Z",
+    "duration": 4,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "bb740011-2aaa-40eb-969f-b72aa9f07a07",
+      "title": "",
+      "fullFile": "C:\\git\\TrabalhoCI\\test\\pagamento.test.js",
+      "file": "\\test\\pagamento.test.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "79f9882f-9fab-4e74-a900-41bd56154e6e",
+          "title": "Classe de servico de pagamento de cobranças",
+          "fullFile": "C:\\git\\TrabalhoCI\\test\\pagamento.test.js",
+          "file": "\\test\\pagamento.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Validar que o pagamento menor que 100 é adicionado na lista de pagamentos",
+              "fullTitle": "Classe de servico de pagamento de cobranças Validar que o pagamento menor que 100 é adicionado na lista de pagamentos",
+              "timedOut": false,
+              "duration": 1,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//Arrange\nconst pagamentoCobranca = new pagamento();\n\n//Act\npagamentoCobranca.realizarPagamento('1234-5678-1012','Enel',98.50);\nconst ConsultaPagamentoCobranca = pagamentoCobranca.consultarUltimoPagamento();\nconst UltimoPagamento = ConsultaPagamentoCobranca.at(-1);\n\n//Assert\nassert.equal(UltimoPagamento.codigoDeBarras, '1234-5678-1012');\n        assert.equal(UltimoPagamento.empresa, 'Enel');\nassert.equal(UltimoPagamento.valor, 98.50);\nassert.equal(UltimoPagamento.categoria, 'Padrao');",
+              "err": {},
+              "uuid": "e2345b62-b7e5-47ba-b7c5-65c4cff69e2c",
+              "parentUUID": "79f9882f-9fab-4e74-a900-41bd56154e6e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validar que o pagamento maior que 100 é adicionado na lista de pagamentos",
+              "fullTitle": "Classe de servico de pagamento de cobranças Validar que o pagamento maior que 100 é adicionado na lista de pagamentos",
+              "timedOut": false,
+              "duration": 0,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//Arrange\nconst pagamentoCobranca = new pagamento();\n\n//Act\npagamentoCobranca.realizarPagamento('1233-5677-7563','Equatorial',251);\nconst ConsultaPagamentoCobranca = pagamentoCobranca.consultarUltimoPagamento();\nconst UltimoPagamento = ConsultaPagamentoCobranca.at(-1);\n\n//Assert\nassert.equal(UltimoPagamento.codigoDeBarras, '1233-5677-7563');\nassert.equal(UltimoPagamento.empresa, 'Equatorial');\nassert.equal(UltimoPagamento.valor, 251);\nassert.equal(UltimoPagamento.categoria, 'Cara');",
+              "err": {},
+              "uuid": "b2358957-95fa-4f2e-9519-2d1bbc3cfc63",
+              "parentUUID": "79f9882f-9fab-4e74-a900-41bd56154e6e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e2345b62-b7e5-47ba-b7c5-65c4cff69e2c",
+            "b2358957-95fa-4f2e-9519-2d1bbc3cfc63"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "11.7.5"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.3.2"
+    }
+  }
+}
