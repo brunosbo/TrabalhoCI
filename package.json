@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/brunosbo/TrabalhoConclusaoProgramacao#readme",
   "dependencies": {
-    "mocha": "^11.7.5",
+    "mocha": "^11.7.6",
     "mochawesome": "^7.1.4"
   }
 }
